@@ -1,11 +1,1 @@
-entry: ./src/specs
-port: 3030
 
-build:
-  prod: true
-  outputFolder: ./.build
-  modules:
-    main: ./src/components/MyComponent.jsx
-  vendor:
-    - react
-    - react-dom
