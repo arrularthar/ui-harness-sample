@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_arrularthar_ui_harness_sample_1708878924232-pr-trigger-input-set
+  identifier: Build_arrularthar_ui_harness_sample_1708878924232prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Harness_POC
+  pipeline:
+    identifier: Build_arrularthar_ui_harness_sample_1708878924232
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
