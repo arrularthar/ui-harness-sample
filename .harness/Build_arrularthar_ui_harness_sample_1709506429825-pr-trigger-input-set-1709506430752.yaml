@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_arrularthar_ui_harness_sample_1709506429825-pr-trigger-input-set
+  identifier: Build_arrularthar_ui_harness_sample_1709506429825prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: asdasd
+  pipeline:
+    identifier: Build_arrularthar_ui_harness_sample_1709506429825
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
