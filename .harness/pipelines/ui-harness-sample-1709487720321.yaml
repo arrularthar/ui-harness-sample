@@ -29,7 +29,7 @@ pipeline:
                   name: build
                   spec:
                     connectorRef: POCHarness
-                    image: 396686edfe7b8a79a69b0ef0912ec4517c796e214baa1b2101e71f74e975ef43
+                    image: harness/delegate
                     shell: Sh
                     command: npm run build
                   timeout: ""
