@@ -25,16 +25,6 @@ pipeline:
                   timeout: ""
                   type: Run
               - step:
-                  identifier: build
-                  name: build
-                  spec:
-                    connectorRef: POCHarness
-                    image: node:latest
-                    shell: Sh
-                    command: npm run build
-                  timeout: ""
-                  type: Run
-              - step:
                   type: BuildAndPushDockerRegistry
                   name: Harness-POC
                   identifier: HarnessPOC
@@ -42,7 +32,7 @@ pipeline:
                     connectorRef: HarnessDockerConnector
                     repo: arrulas/harness-poc
                     tags:
-                      - harness1
+                      - harness2
                     dockerfile: Dockerfile
           platform:
             os: Linux
