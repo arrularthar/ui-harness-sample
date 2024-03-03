@@ -19,7 +19,7 @@ pipeline:
             steps:
               - step:
                   type: BuildAndPushDockerRegistry
-                  name: Harness-POC
+                  name: BuildandDeploy
                   identifier: HarnessPOC
                   spec:
                     connectorRef: HarnessDockerConnector
