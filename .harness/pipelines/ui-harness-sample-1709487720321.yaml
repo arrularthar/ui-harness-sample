@@ -12,7 +12,7 @@ pipeline:
   stages:
     - stage:
         identifier: build1
-        name: build
+        name: BuildandDeploy
         spec:
           cloneCodebase: true
           execution:
@@ -22,16 +22,6 @@ pipeline:
                   name: install dependencies
                   spec:
                     command: npm install
-                  timeout: ""
-                  type: Run
-              - step:
-                  identifier: build
-                  name: build
-                  spec:
-                    connectorRef: POCHarness
-                    image: node:latest
-                    shell: Sh
-                    command: npm run build
                   timeout: ""
                   type: Run
               - step:
@@ -50,4 +40,8 @@ pipeline:
           runtime:
             type: Cloud
             spec: {}
+          caching:
+            enabled: false
+            paths: []
         type: CI
+        description: ""
