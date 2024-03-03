@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_arrularthar_ui_harness_sample_1709487724500-push-trigger-input-set
+  identifier: Build_arrularthar_ui_harness_sample_1709487724500pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: POCHarnessUI
+  pipeline:
+    identifier: Build_arrularthar_ui_harness_sample_1709487724500
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
