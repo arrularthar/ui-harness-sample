@@ -28,13 +28,25 @@ pipeline:
                   identifier: build
                   name: build
                   spec:
+                    connectorRef: POCHarness
+                    image: 396686edfe7b8a79a69b0ef0912ec4517c796e214baa1b2101e71f74e975ef43
+                    shell: Sh
                     command: npm run build
                   timeout: ""
                   type: Run
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: Harness-POC
+                  identifier: HarnessPOC
+                  spec:
+                    connectorRef: POCHarness
+                    repo: arrulas/harness-poc
+                    tags:
+                      - harness-go
           platform:
-            os: MacOS
-            arch: Amd64
+            os: Linux
+            arch: Arm64
           runtime:
-            type: Docker
+            type: Cloud
             spec: {}
         type: CI
