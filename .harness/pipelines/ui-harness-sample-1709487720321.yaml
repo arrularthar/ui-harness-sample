@@ -18,23 +18,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  identifier: installdependencies
-                  name: install dependencies
-                  spec:
-                    command: npm install
-                  timeout: ""
-                  type: Run
-              - step:
-                  identifier: build
-                  name: build
-                  spec:
-                    connectorRef: POCHarness
-                    image: node:latest
-                    shell: Sh
-                    command: npm run build
-                  timeout: ""
-                  type: Run
-              - step:
                   type: BuildAndPushDockerRegistry
                   name: Harness-POC
                   identifier: HarnessPOC
@@ -51,28 +34,3 @@ pipeline:
             type: Cloud
             spec: {}
         type: CI
-    - stage:
-        name: DeployAndPush
-        identifier: DeployAndPush
-        description: ""
-        type: CI
-        spec:
-          cloneCodebase: true
-          platform:
-            os: Linux
-            arch: Arm64
-          runtime:
-            type: Cloud
-            spec: {}
-          execution:
-            steps:
-              - step:
-                  type: BuildAndPushDockerRegistry
-                  name: BuildAndPushDockerRegistry_1
-                  identifier: BuildAndPushDockerRegistry_1
-                  spec:
-                    connectorRef: HarnessDockerConnector
-                    repo: arrulas/harness-poc
-                    tags:
-                      - harness3
-                    dockerfile: Dockerfile
