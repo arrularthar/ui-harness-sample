@@ -51,3 +51,28 @@ pipeline:
             type: Cloud
             spec: {}
         type: CI
+    - stage:
+        name: DeployAndPush
+        identifier: DeployAndPush
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Arm64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: HarnessDockerConnector
+                    repo: arrulas/harness-poc
+                    tags:
+                      - harness3
+                    dockerfile: Dockerfile
