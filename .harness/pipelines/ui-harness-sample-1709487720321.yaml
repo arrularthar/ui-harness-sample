@@ -43,6 +43,7 @@ pipeline:
                     repo: arrulas/harness-poc
                     tags:
                       - harness-go
+                    dockerfile: Dockerfile
           platform:
             os: Linux
             arch: Arm64
